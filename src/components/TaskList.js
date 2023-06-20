@@ -16,15 +16,19 @@ function TaskList() {
 
             <header>
                 <h1 className='text-3xl font-bold underline'>Total Tasks: {tasks.length}</h1>
-                <Link to='/create-task'>Create Task</Link>
+                <div className='menu flex flex-row'>
+                    <Link className='basis-1/4' to='/create-task'>Create Task </Link>
+                    <Link className='basis-1/4' to='/pokemon-query'>Pokemon API </Link>
+                </div>
             </header>
 
             {tasks.map(task => (
                 <div className='task' key={task.id}>
                     <h3>{task.title}</h3>
                     <p>{task.description}</p>
-                    <button onClick={() => handleDelete(task.id)}>Delete</button>
-                    <Link to={`/edit-task/${task.id}`}>Edit</Link>
+                    <button onClick={() => handleDelete(task.id)}>Delete  </button>
+
+                    <Link to={`/edit-task/${task.id}`}>Edit  </Link>
                 </div>
             ))}
         </div>
